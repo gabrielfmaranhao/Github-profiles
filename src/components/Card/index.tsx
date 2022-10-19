@@ -1,4 +1,5 @@
 import { BoxImgInfo, Container, DivImagem, DivInfo, Divlink } from "./style"
+import { motion } from "framer-motion"
 
 export interface IData {
   avatar_url: string
@@ -15,6 +16,7 @@ const Card = ({ avatar_url, bio, followers,login, public_repos, repost}:IData) =
   console.log(filtrar)
   
 return(
+  <motion.div initial={{opacity: 0, scale: 0.5}} animate={{opacity: 1, scale: 1}} transition={{ duration: 0.8}} >
   <Container>
     <BoxImgInfo>
       <DivImagem>
@@ -40,6 +42,7 @@ return(
       </ul>
     </Divlink>
   </Container>
+  </motion.div>
 )
 }
 export default Card
